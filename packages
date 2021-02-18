@@ -1,4 +1,4 @@
-#TAG,NAME IN REPO (or git url),PURPOSE (should be a verb phrase to sound right while installing)
+#TAG,NAME IN REPO (or git url)
 ,xorg-server
 ,xorg-xwininfo
 ,xorg-xinit
@@ -78,3 +78,8 @@ A,caffeine-ng
 ,python-pytest
 ,python-pipenv
 ,npm
+A,cryptomator
+,network-manager-applet
+,ttf-ubuntu-font-family
+A,python-adblock
+A,chromium-widevine
