@@ -126,6 +126,7 @@ installpkg base-devel
 installpkg git
 installpkg ntp
 installpkg stow
+installpkg go
 
 ntpdate 0.us.pool.ntp.org >/dev/null 2>&1
 
