@@ -13,12 +13,6 @@ installpkg() { pacman --noconfirm --needed -S "$1" >/dev/null 2>&1 ;}
 
 error() { clear; printf "ERROR:\\n%s\\n" "$1"; exit 1;}
 
-
-gitconfig () { \
-    echo "Adding git credentials globally"
-	sudo -u lydien git config --global user.email "s.lydien@icloud.com"
-	sudo -u lydien git config --global user.name "Lydien Sandanasamy" ;}
-
 refreshkeys() { \
     echo "Refreshing archlinux-keyring"
 	pacman --noconfirm -Sy archlinux-keyring >/dev/null 2>&1
@@ -137,9 +131,6 @@ ntpdate 0.us.pool.ntp.org >/dev/null 2>&1
 
 [ -f /etc/sudoers.pacnew ] && cp /etc/sudoers.pacnew /etc/sudoers # Just in case
 
-# Setup git config
-gitconfig || error "Could not set git credentials globally"
-
 # Allow user to run sudo without password. Since AUR programs must be installed
 # in a fakeroot environment, this is required for all builds with AUR.
 newperms "%wheel ALL=(ALL) NOPASSWD: ALL"
@@ -160,10 +151,11 @@ stowinstall "$DOTFILESREPO" "$REPOBRANCH"
 # installs each needed program the way required. Be sure to run this only after
 # the user has been created and has priviledges to run sudo without a password
 # and all build dependencies are installed.
-installationloop
+echo "Copying packages file localy" && cp /root/bootstrap/packages /tmp/
+installationloop || error "Failed to install package."
 
 # Make zsh the default shell for the user.
-zshconfig
+zshconfig || error "Failed to set zsh as default shell."
 
 # Use french layout globally and also use terminus-font for TTY.
 printf "KEYMAP=fr\nFONT=ter-122n\n" > /etc/vconsole.conf
