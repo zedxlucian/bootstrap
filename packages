@@ -14,7 +14,7 @@
 ,nitrogen
 ,gnome-keyring
 ,man-db
-A,qutebrowser-git
+A,brave-bin
 ,noto-fonts-emoji
 ,noto-fonts-cjk
 ,ntfs-3g
@@ -58,11 +58,9 @@ A,zsh-theme-powerlevel10k-git
 ,terminus-font
 ,ttf-roboto
 ,ttf-roboto-mono
-A,megasync-bin
 ,numlockx
 A,checkupdates+aur
 ,pacman-contrib
-A,bitwarden-bin
 G,https://git.suckless.org/dwm
 G,https://git.suckless.org/st
 G,https://git.suckless.org/dmenu
@@ -78,8 +76,6 @@ A,caffeine-ng
 ,python-pytest
 ,python-pipenv
 ,npm
-A,cryptomator
+A,cryptomator-bin
 ,network-manager-applet
 ,ttf-ubuntu-font-family
-A,python-adblock
-A,chromium-widevine
