@@ -5,6 +5,7 @@
 ,xorg-xsetroot
 ,arandr
 ,picom
+,zsh
 ,xorg-xprop
 ,dosfstools
 ,libnotify
